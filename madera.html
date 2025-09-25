@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDENATEC S.A.S - Tus archivos en un solo lugar</title>
+    <meta name="description" content="ORDENATEC S.A.S - Organiza tus archivos digitales de manera rápida y eficiente mediante palabras clave">
+    <meta name="author" content="ORDENATEC S.A.S">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ORDENATEC S.A.S - Tus archivos en un solo lugar">
+    <meta property="og:description" content="Organiza tus archivos digitales de manera rápida y eficiente">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav a:hover {
+            color: #e0e7ff;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: #8b5cf6;
+        }
+        
+        .btn-primary:hover {
+            background-color: #f3f4f6;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #8b5cf6;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+        
+        .footer-section p {
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #8b5cf6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+        
+        .qr-code {
+            text-align: center;
+        }
+        
+        .qr-code img {
+            width: 120px;
+            height: 120px;
+            border-radius: 0.5rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="data:image/"C:\Users\ESTUDIANTE\Downloads\WhatsApp Unknown 2025-09-23 at 9.05.51 AM\LOGO ORDENATEC.jpeg"" alt="ORDENATEC Logo">
+                    <span class="logo-text">ORDENATEC S.A.S</span>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#encuesta">Encuesta</a></li>
+                        <li><a href="#acerca">Acerca de nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contáctenos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Bienvenido a ORDENATEC S.A.S</h1>
+            <p>Tus archivos en un solo lugar</p>
+            <p>Organiza tus archivos digitales de manera rápida y eficiente mediante palabras clave, ahorrando tiempo y mejorando tu productividad.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Ir a la App</a>
+                <a href="#features" class="btn btn-secondary">Conocer Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir ORDENATEC S.A.S?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Organización por Palabras Clave</h3>
+                    <p>Clasifica tus archivos usando palabras clave personalizadas para encontrarlos al instante cuando los necesites.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Búsqueda Inteligente</h3>
+                    <p>Encuentra cualquier archivo en segundos con nuestro potente motor de búsqueda que entiende el contexto de tus documentos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Clasificación Automática</h3>
+                    <p>Nuestra IA analiza automáticamente tus archivos y sugiere las mejores categorías y etiquetas para optimizar tu organización.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Sincronización Rápida</h3>
+                    <p>Sincroniza todos tus archivos en tiempo real entre dispositivos para tener acceso desde cualquier lugar y momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Sections Preview -->
+    <section id="acerca" class="features">
+        <div class="container">
+            <h2 class="section-title">Acerca de Nosotros</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Nuestra Visión</h3>
+                    <p>ORDENATEC será una aplicación líder a nivel mundial en organización de archivos digitales, reconocida por estudiantes, profesionales y empresarios por su simplicidad y personalización.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Nuestra Misión</h3>
+                    <p>ORDENATEC desarrolla una aplicación innovadora que permite a estudiantes, profesionales y empresas organizar sus archivos digitales de manera rápida y eficiente mediante palabras clave.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Nuestros Valores</h3>
+                    <p><strong>Innovación:</strong> Buscamos constantemente nuevas formas de mejorar la experiencia del usuario.<br>
+                    <strong>Transparencia:</strong> Mantenemos comunicación clara y honesta con nuestros usuarios.<br>
+                    <strong>Compromiso:</strong> Nos dedicamos a brindar el mejor servicio posible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="features">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Plan Básico</h3>
+                    <p>Perfecto para estudiantes y uso personal. Organiza hasta 1,000 archivos con funciones básicas de categorización.</p>
+                    <p><strong>Gratis</strong></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Plan Profesional</h3>
+                    <p>Ideal para profesionales que manejan grandes volúmenes de documentos. Incluye IA avanzada y sincronización ilimitada.</p>
+                    <p><strong>$19.99/mes</strong></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Plan Empresarial</h3>
+                    <p>Solución completa para empresas con equipos de trabajo colaborativo y funciones avanzadas de administración.</p>
+                    <p><strong>$49.99/mes</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="features">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Blog Principal de la App</h3>
+                <p>Mantente actualizado con las últimas novedades, consejos de organización de archivos y actualizaciones de ORDENATEC S.A.S. Descubre nuevas formas de optimizar tu flujo de trabajo digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section id="encuesta" class="features">
+        <div class="container">
+            <h2 class="section-title">Encuestas</h2>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Encuestas Mensuales sobre Cosas a Mejorar</h3>
+                <p>Tu opinión nos importa. Participa en nuestras encuestas mensuales y ayúdanos a mejorar ORDENATEC S.A.S según tus necesidades. Juntos construimos una mejor experiencia para todos los usuarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para organizar tus archivos?</h2>
+            <p>Únete a miles de usuarios que ya organizan sus documentos de forma inteligente</p>
+            <a href="#" class="btn btn-primary">Comenzar Gratis</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ORDENATEC S.A.S</h3>
+                    <p>Tus archivos en un solo lugar</p>
+                    <p>📧 info@ordenatec.com</p>
+                    <p>📱 +57 (1) 234-5678</p>
+                    <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <p><a href="#">Organización de Archivos</a></p>
+                    <p><a href="#">Búsqueda Inteligente</a></p>
+                    <p><a href="#">Sincronización en la Nube</a></p>
+                    <p><a href="#">Soporte Técnico</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Soporte</h3>
+                    <p><a href="#">Centro de Ayuda</a></p>
+                    <p><a href="#">Contacto Técnico</a></p>
+                    <p><a href="#">Empleo</a></p>
+                    <p><a href="#">Empresa</a></p>
+                </div>
+                <div class="footer-section qr-code">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                    <p style="margin-top: 1rem;">Escanea para seguirnos:</p>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTAgMTBoMjB2MjBIMTB6IiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMzUgMTBoNXYyMGgtNXoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9IjQ1IDEwaDV2MjBoLTV6IiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNTUgMTBoMTV2NUg1NXoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik03NSAxMGg1djIwaC01eiIgZmlsbD0iYmxhY2siLz4KPHN2ZyB4PSI4NSIgeT0iMTAiIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgdmlld0JveD0iMCAwIDI1IDI1Ij4KPHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiBmaWxsPSJibGFjayIvPgo8cmVjdCB4PSI1IiB5PSI1IiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="QR Code Redes Sociales" style="margin-top: 0.5rem;">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ORDENATEC S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
